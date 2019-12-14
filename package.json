@@ -1,0 +1,24 @@
+{
+	"name": "bitpay.js",
+	"version": "1.0.0",
+	"description": "BitPay JS lib from https://bitpay.com/docs/display-invoice",
+	"main": "bitpay.js",
+	"types": "bitpay.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/buu700/bitpay.git"
+	},
+	"keywords": [
+		"bitcoin",
+		"btc",
+		"blockchain",
+		"money",
+		"client",
+		"bitpay"
+	],
+	"author": "Ryan Lester <hacker@linux.com> (https://github.com/buu700)",
+	"license": "BSD-2-Clause",
+	"bugs": {
+		"url": "https://github.com/buu700/bitpay/issues"
+	}
+}
