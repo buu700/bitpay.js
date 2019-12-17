@@ -2,6 +2,9 @@ declare module 'bitpay.js' {
 	/** Allows you to display invoices created via https://test.bitpay.com. */
 	const enableTestMode: (enable?: boolean) => void;
 
+	/** Hides modal UI. */
+	const hideFrame: () => void;
+
 	/** Allows you to specify a function to be called right before the modal opens. */
 	const onModalWillEnter: (customOnModalWillEnter: () => void) => void;
 
@@ -10,4 +13,7 @@ declare module 'bitpay.js' {
 
 	/** Displays invoice in modal. */
 	const showInvoice: (invoiceId: string, params?: {animateEntrance: boolean}) => void;
+
+	/** Shows modal UI. */
+	const showFrame: () => void;
 }
