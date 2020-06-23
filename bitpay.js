@@ -110,24 +110,6 @@
     warn('bitpay.js is running in test mode.');
   }
 
-  function isLoadedFromBitPay() {
-    var loadedFromBitPay = false;
-    var scriptTags = window.document.getElementsByTagName('script');
-    for (var i = 0; i < scriptTags.length; i++) {
-      var tag = scriptTags[i];
-      if(tag.outerHTML && tag.outerHTML.indexOf && (tag.outerHTML.indexOf('https://bitpay.com/bitpay.js') !== -1) ||
-      (tag.outerHTML.indexOf('https://bitpay.com/bitpay.min.js') !== -1) ) {
-        loadedFromBitPay = true;
-      }
-    }
-    if(window.location.origin === 'https://bitpay.com' ||
-       window.location.origin === 'https://test.bitpay.com' ||
-       window.location.origin === origin) {
-      loadedFromBitPay = true;
-    }
-    return loadedFromBitPay;
-  }
-
   function setButtonListeners() {
     var buttons = window.document.querySelectorAll('[data-bitpay-button]');
     for(var i = 0; i < buttons.length; i++) {
@@ -135,13 +117,6 @@
       b.addEventListener('submit', showFrame);
     }
   }
-
-  window.addEventListener('load', function load() {
-    if(!isLoadedFromBitPay()) {
-      warn('bitpay.js: It looks like you may be loading bitpay.js in an unconvential way. We highly recommend that you load bitpay.js by adding \'<script src="https://bitpay.com/bitpay.min.js"></script>\' to your webpage. This will ensure that you get access to new features and product updates as they become available.');
-    }
-    window.removeEventListener('load', load);
-  });
 
   window.addEventListener('message', receiveMessage, false);
   setButtonListeners();
